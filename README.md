@@ -1,5 +1,7 @@
 # dsh-psdbg
 
+**[English](README.en.md) | 中文**
+
 > **自著插件，MIT。** Photoshop 实机调试桥的 MCP server（DSH bundle）。
 >
 > **安装后必须改一行**：`cordis.patch.yml` 里 `args` 的 `<install-dir>` 换成实际安装目录（通常是 `~/.dsh/profiles/<profile>/node_modules/dsh-psdbg`），否则 MCP server 起不来。
