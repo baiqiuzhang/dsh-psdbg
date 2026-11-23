@@ -1,0 +1,60 @@
+{
+  "name": "dsh-psdbg",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Local live-debug bridge for Photoshop ES/COM, UXP, classic SDK and UXP Hybrid plugins.",
+  "bin": {
+    "psdbg": "bin/psdbg.mjs"
+  },
+  "scripts": {
+    "doctor": "node bin/psdbg.mjs doctor",
+    "test": "node --test \"test/*.test.mjs\"",
+    "mcp": "node mcp/server.mjs"
+  },
+  "dependencies": {
+    "@bubblydoo/uxp-devtools-common": "^0.0.13",
+    "chrome-remote-interface": "^0.33.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "bin",
+    "mcp",
+    "src",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.2.0 || >=0.2.0 <0.3.0-0 || >=0.2.2-0 <0.3.0-0"
+  },
+  "license": "MIT",
+  "author": "baiqiuzhang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baiqiuzhang/dsh-psdbg.git"
+  },
+  "homepage": "https://github.com/baiqiuzhang/dsh-psdbg#readme",
+  "bugs": {
+    "url": "https://github.com/baiqiuzhang/dsh-psdbg/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "Photoshop debug bridge",
+    "summary": "MCP server that drives a live Photoshop: inspect documents, run ExtendScript, load and operate UXP plugins, capture windows/panels, classify PiPL/classic plug-ins, and build evidence bundles.",
+    "tags": [
+      "photoshop",
+      "uxp",
+      "mcp",
+      "debug"
+    ]
+  }
+}

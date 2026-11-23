@@ -1,0 +1,21 @@
+# ps-debug-bridge MCP for DeepSeek Harness.
+#
+# Connects the local Photoshop live-debug bridge over stdio; its tools reach the
+# model as `mcp__psdbg__<tool>`.
+#
+# AFTER INSTALLING: replace <install-dir> below with the directory where this
+# package was installed (for a profile install it is usually
+# `~/.dsh/profiles/<profile>/node_modules/dsh-psdbg`). Nothing else needs editing
+# unless your Photoshop launcher is customized (PSDBG_LAUNCHER).
+#
+# Remove this bundle from dsh.profile.bundles to switch the bridge off.
+- insert:
+    - id: mcp-psdbg
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: psdbg
+        transport: stdio
+        command: 'node'
+        args:
+          - '<install-dir>/mcp/server.mjs'
+        toolCallTimeoutMs: 120000
